@@ -1,0 +1,203 @@
+:root{
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 90%);
+    --White: hsl(0, 0%, 100%);
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    min-height: 100vh;
+    background: url(images/bg-pattern-top-mobile.svg) no-repeat , url(images/bg-pattern-bottom-mobile.svg) no-repeat;
+    background-position: 0 0, 100% 100%;
+    background-size: 100vw;
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+}
+.page-carrier{
+    display: grid;
+    grid-template: 
+    "head"
+    "rate"
+    "cards";
+}
+.container{
+    width:min(1200px,90vw);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+header.testim{
+    grid-area:head;
+}
+.testim h2{
+    color:var(--Very-Dark-Magenta);
+    font-size: clamp(2rem,9vw,3rem);
+    margin-top:5rem;
+}
+.testim p{
+    line-height: 1.6;
+    color:var(--Dark-Grayish-Magenta);
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+}
+.rating{
+    grid-area:rate
+}
+.rating .block{
+    background-color:var(--Light-Grayish-Magenta);
+    padding:1em;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    width:min(90vw,500px);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.rating .block img{
+    width:23px;
+    margin-inline-start: 10px;
+}
+.rating p{
+    color:var(--Very-Dark-Magenta);
+    font-weight: bold;
+}
+.cards{
+    grid-area:cards;
+    margin-top: 4rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.cards > div{
+    background-color: var(--Very-Dark-Magenta);
+    color: white;
+    border-radius: 10px;
+    padding: .9rem;
+    margin-bottom: 2rem;
+    margin-inline: auto;
+}
+.cards .person{
+    display: flow-root;
+    margin-top:1em;
+}
+.cards .person img{
+    border-radius: 50%;
+    float:left;
+    width:50px;
+    margin-right:2rem;
+    margin-left:1rem;
+    margin-bottom: 1rem;
+}
+.cards .person .info{
+    float:left;
+    font-size: 16px;
+}
+.person .info span{
+    color:var(--Soft-Pink);
+}
+.person .info p{
+    font-weight: 500;
+    margin-top:.4rem;
+    margin-bottom:.2rem;
+}
+.cards .comment blockquote{
+    margin-inline:0;
+    color:var(--Light-Grayish-Magenta);
+    line-height: 1.6;
+}
+@media(min-width:770px){
+    body{
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat, no-repeat;
+        text-align: left;
+        background-size: initial;
+    }
+    .page-carrier{
+        grid-template: 
+        "head rate"
+        "cards cards";
+    }
+    header.testim{
+        
+    }
+    .testim h2{
+        font-size: clamp(2rem,9vw,3rem);
+        margin-top:5rem;
+    }
+    .testim p{
+        margin-bottom: 3rem;
+    }
+    .rating{
+        grid-area:rate;
+        margin-top:5rem;
+    }
+    .rating .block{
+        padding:1em;
+        margin-bottom: 1rem;
+        width:min(90vw,500px);
+        margin-right:8rem;
+        flex-direction: row;
+    }
+    .rating .block:nth-of-type(2){
+        transform:translateX(4rem)
+    }
+    .rating .block:nth-of-type(3){
+        transform:translateX(8rem)
+    }
+    .rating .block img{
+        width:23px;
+        margin-inline-start: 4px;
+    }
+    .rating div{
+        margin-left:1rem;
+    }
+    .rating p{
+        margin-left: 2rem;
+    }
+    .cards{
+        margin-top: 0rem;
+        flex-direction: row;
+    }
+    .cards > div{
+        border-radius: 10px;
+        padding: .9rem;
+        margin-bottom: 2rem;
+        margin-inline: auto;
+        display: inline-block;
+    }
+    .cards >div:nth-of-type(2){
+        transform: translateY(3rem);
+    }
+    .cards >div:nth-of-type(3){
+        transform: translateY(6rem);
+    }
+    .cards >div:not(:first-of-type){
+        margin-left:2rem;
+    }
+    .cards .person{
+    }
+    .cards .person img{
+        margin-right:2rem;
+        margin-left:1rem;
+        margin-bottom: 1rem;
+    }
+    .cards .person .info{
+    }
+    .person .info span{
+    }
+    .person .info p{
+        margin-top:.4rem;
+        margin-bottom:.2rem;
+    }
+    .cards .comment blockquote{
+        margin-inline:0;
+        padding-inline:2px;
+    }
+
+}
